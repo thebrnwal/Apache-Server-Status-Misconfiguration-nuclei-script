@@ -1,0 +1,18 @@
+id: Apache server Status Panel
+
+info:
+  name: Arbitrary Text Injection
+  author: Nikhil Kumar(https://www.linkedin.com/in/thebrnwal/)
+  severity: Medium
+  tags:  apache misconfiguration
+
+  
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/server-status
+    matchers:
+      - type: word
+        words:
+          - "Apache Server Status"
+        part: body
